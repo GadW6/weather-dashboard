@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>WeatherApp | Weather</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="./css/fa/css/fontawesome.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/weather.min.css">
+  </head>
+
+  <body style="overflow-x: hidden; overflow-y: auto;" onload="startTime()">
+    <div class="wrapper">
+
+        <!-- Sidebar Shared Start -->
+
+        <div class="sidebar">
+            <div class="logo-header">WeatherApp</div>
+            <section class="h-sep"></section>
+            <ul>
+                <li>
+                    <a href="./dashboard.html">
+                      <i class="fas fa-th-large"></i>
+                      <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="select">
+                  <a href="./weather.html">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    <p>Weather</p>
+                  </a>
+                  <span class="new" style="display: block;">New !</span>
+                </li>
+                <li>
+                    <a href="#" disabled="disabled">
+                      <i class="fas fa-scroll"></i>
+                      <p>Blog</p>
+                    </a>
+                    <span class="new">Coming Soon !</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sidebar Shared End -->
+
+        <div class="main-panel">
+          <div class="container-fluid">
+
+            <!-- Top Navbar Shared Start -->
+
+            <nav>
+                <div class="nav-page">weather</div>
+                <div id="clock"></div>
+                <div class="nav-commands">
+    
+                    <div class="dashboard-icon">
+                      <a href="./dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                      </a>
+                    </div>
+    
+                    <div class="notifications">
+                      <i class="fas fa-bell"></i>
+                      <i class="fas fa-envelope"></i>
+                    </div>
+    
+                    <div class="user-icon">
+                      <span class="user-name">Gary Weintraub</span>
+                      <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Top Navbar Shared End -->
+
+            <!-- App Start -->
+
+            <main>
+              <section>
+                <form id="location">
+                  <i class="fas fa-map-pin"></i>
+                  <input type="text" placeholder="Ex: Ramla, IL (default)">
+                </form>
+              </section>
+              <div class="card current-card">
+                <div class="card-title">
+                  <i class="fas fa-calendar-day"></i>
+                  <h3>Current Weather</h3>
+                </div>
+                <div class="card-body">
+                  <h2>Today</h2>
+                  <i class="fas fa-camera-retro"></i>
+                  <section><span class="now-temp">23</span><i class="far fa-circle"></i>C</section>
+                  <h6>Cloudy</h6>
+                  <p>max: <span class="min-temp">27<i class="far fa-circle"></i>C</span> / min: <span class="max-temp">12<i class="far fa-circle"></i>C</span></p>
+                </div>
+              </div>
+              <div class="card forecast-card">
+                <div class="card-title">
+                  <i class="fas fa-calendar-alt"></i>
+                  <h3>Daily Forecast Weather (4d)</h3>
+                </div>
+                <div class="card-body">
+                  <div class="items item1">
+                    <div class="items-body">
+                      <h2>Tomorrow</h2>
+                      <i class="fas fa-camera-retro"></i>
+                      <section><span class="now-temp">15</span><i class="far fa-circle"></i>C</section>
+                      <h6>Showers</h6>
+                      <p>max: <span class="min-temp">27<i class="far fa-circle"></i>C</span> / min: <span class="max-temp">12<i class="far fa-circle"></i>C</span></p>
+                    </div>
+                  </div>
+                  <div class="items item2">
+                    <div class="items-body">
+                      <h2>15/08</h2>
+                      <i class="fas fa-camera-retro"></i>
+                      <section><span class="now-temp">17</span><i class="far fa-circle"></i>C</section>
+                      <h6>Rainy</h6>
+                      <p>max: <span class="min-temp">27<i class="far fa-circle"></i>C</span> / min: <span class="max-temp">12<i class="far fa-circle"></i>C</span></p>
+                    </div>
+                  </div>
+                  <div class="items item3">
+                    <div class="items-body">
+                      <h2>16/08</h2>
+                      <i class="fas fa-camera-retro"></i>
+                      <section><span class="now-temp">20</span><i class="far fa-circle"></i>C</section>
+                      <h6>Mostly Cloudy</h6>
+                      <p>max: <span class="min-temp">27<i class="far fa-circle"></i>C</span> / min: <span class="max-temp">12<i class="far fa-circle"></i>C</span></p>
+                    </div>
+                  </div>
+                  <div class="items item4">
+                    <div class="items-body">
+                      <h2>17/08</h2>
+                      <i class="fas fa-camera-retro"></i>
+                      <section><span class="now-temp">25</span><i class="far fa-circle"></i>C</section>
+                      <h6>Sunny</h6>
+                      <p>max: <span class="min-temp">27<i class="far fa-circle"></i>C</span> / min: <span class="max-temp">12<i class="far fa-circle"></i>C</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card canvas canvas-temp">
+                <div class="card-title canvas-title">
+                  <i class="fas fa-temperature-high"></i>
+                  <h3>Temperature 5 days forecast overview</h3>
+                </div>
+                <div class="card-body canvas-body">
+                  <canvas id="weather-canvas"></canvas>
+                </div>
+              </div>
+              <div class="card canvas canvas-precip">
+                <div class="card-title canvas-title"></div>
+                <div class="card-body canvas-body">
+                  <canvas id="weather-precip"></canvas>
+                </div>
+              </div>
+              <div class="card canvas canvas-graph">
+                <div class="card-title canvas-title"></div>
+                <div class="card-body canvas-body">
+                  <canvas id="weather-graph"></canvas>
+                </div>
+              </div>
+            </main>
+
+            <!-- App End -->
+
+            <div id="space"></div>  
+          </div>
+        </div>
+    </div>
+
+    <!-- End -->
+
+      
+    <!-- Inline JavaScript Start -->
+    <script>
+      
+    </script>
+    <!-- Inline JavaScript End -->
+    <script src="./js/global.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/charts.min.js"></script>
+    <script src="./js/canvas.js"></script>
+  </body>
+</html>
